@@ -210,4 +210,12 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    private void handleReceivedRule() {
+        colorRuleController.getAllRules().thenApply(rules -> {
+            if (!rules.isEmpty()) {
+                ruleList.addAll(rules);
+            }
+            return null;
+        });
+    }
 }
